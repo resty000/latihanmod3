@@ -1,0 +1,67 @@
+[00.25, 13/4/2023] Sintaeyo JJ: package modul3.strukdat;
+
+public class Lat2 {
+    private int maxSize;
+    private Object[] queueArray;
+    private int front;
+    private int rear;
+    private int nItems;
+
+    public Lat2(int size) {
+        maxSize = size;
+        queueArray = new Object[maxSize];
+        front = 0;
+        rear = -1;
+        nItems = 0;
+    }
+
+    public void insert(Object value) {
+        if (rear == maxSize - 1) {
+            rear = -1;
+        }
+        queueArray[++rear] = value;
+        nItems++;
+    }
+
+    public Object remove() {
+        Object temp = queueArray[front++];
+        if (front == maxSize) {
+            front = 0;
+        }
+        nItems--;
+        return temp;
+    }
+
+    public Object peek() {
+        return queueArray[front];
+    }
+
+    public boole…
+[00.25, 13/4/2023] Sintaeyo JJ: package modul3.strukdat;
+
+import java.util.Stack;
+
+public class Latihan1{
+    public static void main(String[] args) {
+        Stack st = new Stack();
+
+        st.push("Aku");
+        st.push("Anak");
+        st.push("Indonesia");
+
+        System.out.println("Next : " +st.peek());
+        st.push("Raya");
+        System.out.println(st.pop());
+        st.push("!");
+
+        int count = st.search("Aku");
+        while (count != -1 && count > 1){
+            st.pop();
+            count--;
+
+        }
+        System.out.println(st.pop());
+        System.out.println(st.empty());
+
+    }
+}
